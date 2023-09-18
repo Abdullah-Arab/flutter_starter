@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const MaterialColor primaryColor =
-    MaterialColor(_primaryColorPrimaryValue, <int, Color>{
-  50: Color(0xFFE6F6FF),
-  100: Color(0xFFC1EAFF),
-  200: Color(0xFF97DCFF),
-  300: Color(0xFF6DCDFF),
-  400: Color(0xFF4EC3FF),
-  500: Color(_primaryColorPrimaryValue),
-  600: Color(0xFF2AB1FF),
-  700: Color(0xFF23A8FF),
-  800: Color(0xFF1DA0FF),
-  900: Color(0xFF1291FF),
-});
+const primaryColor = Colors.amber;
+//   MaterialColor(_primaryColorPrimaryValue, <int, Color>{
+// 50: Color(0xFFE6F6FF),
+// 100: Color(0xFFC1EAFF),
+// 200: Color(0xFF97DCFF),
+// 300: Color(0xFF6DCDFF),
+// 400: Color(0xFF4EC3FF),
+// 500: Color(_primaryColorPrimaryValue),
+// 600: Color(0xFF2AB1FF),
+// 700: Color(0xFF23A8FF),
+// 800: Color(0xFF1DA0FF),
+// 900: Color(0xFF1291FF),
+//});
 const int _primaryColorPrimaryValue = 0xFF2FB8FF;
 
 const MaterialColor mcgpalette0Accent =
@@ -27,7 +27,7 @@ const int _primaryColorAccentValue = 0xFFF9FCFF;
 
 ThemeData primaryTheme = ThemeData(
   //useMaterial3: true,
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: primaryColor),
+  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber),
   fontFamily: 'Almarai',
   listTileTheme: const ListTileThemeData(
     subtitleTextStyle: TextStyle(
@@ -44,17 +44,7 @@ ThemeData primaryTheme = ThemeData(
       height: 1.5,
     ),
   ),
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(
-      color: Color(0xFFffffff),
-    ),
-    headlineSmall: TextStyle(
-      color: Color(0xFFffffff),
-    ),
-    bodySmall: TextStyle(
-      color: Color.fromARGB(255, 200, 200, 200),
-    ),
-  ),
+  textTheme: const TextTheme(),
   filledButtonTheme: FilledButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStateProperty.all(
@@ -62,13 +52,14 @@ ThemeData primaryTheme = ThemeData(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      foregroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
+      //foregroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
     ),
   ),
 
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: const MaterialStatePropertyAll(Color(0xFFA3A3A3)),
+       backgroundColor: const MaterialStatePropertyAll(Colors.white),
+      foregroundColor: const MaterialStatePropertyAll(Colors.black),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

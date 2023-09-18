@@ -4,7 +4,6 @@ import '/src/constants/themes.dart';
 import '/src/screens/auth/auth_screen.dart';
 import '/src/screens/components/error_widget.dart';
 import '/src/screens/components/loading_widget.dart';
-import '/src/screens/landing/landing_screen.dart';
 import '/src/services/service_locator/locator.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +20,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _pages = const [
-    LandingScreen(),
-    Text("Profiel"),
+    Text('Home'),
+    Text("Profile"),
   ];
   int _currentIndex = 0;
   void changeIndex(int index) {
@@ -43,11 +42,21 @@ class _HomeScreenState extends State<HomeScreen> {
           authenticated: (state) {
             return Scaffold(
               key: _scaffoldKey,
-              body: Container(
-                  decoration: const BoxDecoration(
-                    gradient: primaryGradient,
+              body: SafeArea(child: Center(child: _pages[_currentIndex])),
+              bottomNavigationBar: BottomNavigationBar(
+                currentIndex: _currentIndex,
+                onTap: changeIndex,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home),
+                    label: 'Home',
                   ),
-                  child: _pages[_currentIndex]),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person),
+                    label: 'Profile',
+                  ),
+                ],
+              ),
             );
           },
           error: (value) {
