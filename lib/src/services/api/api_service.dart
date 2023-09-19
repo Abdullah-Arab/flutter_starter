@@ -1,11 +1,7 @@
-import '/src/constants/api.dart';
-import '/src/data/models/auth/auth.dart';
-import '/src/data/models/settings/settings.dart';
-import '/src/services/logger/logger.dart';
-import '/src/services/service_locator/locator.dart';
+
 import 'package:dio/dio.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:intl/intl.dart';
+
+import '../../features/auth/models/auth.dart';
 
 abstract class ApiService {
   const ApiService(this._dio);
@@ -25,6 +21,4 @@ abstract class ApiService {
       String passwordConfirmation);
 
   Future<void> deleteAccount();
-
-  Future<String> setSettings(Settings settings);
 }

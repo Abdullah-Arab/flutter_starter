@@ -1,6 +1,7 @@
-import '/src/data/models/auth/user.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'user.dart';
 
 part 'auth.freezed.dart';
 part 'auth.g.dart';

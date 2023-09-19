@@ -1,6 +1,6 @@
+import '../exceptions/my_exception.dart';
 import '/src/constants/gaps.dart';
 import '/src/constants/paddings.dart';
-import '/src/data/models/exceptions/restapi_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -9,7 +9,7 @@ import '../../constants/themes.dart';
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget(
       {super.key, required this.message, required this.onRetry});
-  final RestApiException message;
+  final MyException message;
   final Function onRetry;
 
   @override

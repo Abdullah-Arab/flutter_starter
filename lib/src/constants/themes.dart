@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const primaryColor = Colors.amber;
+const primaryColor = Colors.blue;
 //   MaterialColor(_primaryColorPrimaryValue, <int, Color>{
 // 50: Color(0xFFE6F6FF),
 // 100: Color(0xFFC1EAFF),
@@ -14,20 +14,20 @@ const primaryColor = Colors.amber;
 // 800: Color(0xFF1DA0FF),
 // 900: Color(0xFF1291FF),
 //});
-const int _primaryColorPrimaryValue = 0xFF2FB8FF;
+// const int _primaryColorPrimaryValue = 0xFF2FB8FF;
 
-const MaterialColor mcgpalette0Accent =
-    MaterialColor(_primaryColorAccentValue, <int, Color>{
-  100: Color(0xFFFFFFFF),
-  200: Color(_primaryColorAccentValue),
-  400: Color(0xFFC6E3FF),
-  700: Color(0xFFADD6FF),
-});
-const int _primaryColorAccentValue = 0xFFF9FCFF;
+// const MaterialColor mcgpalette0Accent =
+//     MaterialColor(_primaryColorAccentValue, <int, Color>{
+//   100: Color(0xFFFFFFFF),
+//   200: Color(_primaryColorAccentValue),
+//   400: Color(0xFFC6E3FF),
+//   700: Color(0xFFADD6FF),
+// });
+// const int _primaryColorAccentValue = 0xFFF9FCFF;
 
 ThemeData primaryTheme = ThemeData(
-  //useMaterial3: true,
-  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber),
+  useMaterial3: true,
+  colorScheme: ColorScheme.fromSwatch(primarySwatch: primaryColor),
   fontFamily: 'Almarai',
   listTileTheme: const ListTileThemeData(
     subtitleTextStyle: TextStyle(
@@ -58,7 +58,7 @@ ThemeData primaryTheme = ThemeData(
 
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: ButtonStyle(
-       backgroundColor: const MaterialStatePropertyAll(Colors.white),
+      backgroundColor: const MaterialStatePropertyAll(Colors.white),
       foregroundColor: const MaterialStatePropertyAll(Colors.black),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(

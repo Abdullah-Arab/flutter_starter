@@ -1,5 +1,5 @@
 {
-    "appTitle":"الحزمة الأولية",
+    "appTitle":"flutter_starter_app",
     "login":"تسجيل الدخول",
     "email":"البريد الالكتروني",
     "emailRequired":"البريد الالكتروني مطلوب",
@@ -43,7 +43,9 @@
     "version":"النسخة",
     "close":"اغلاق",
     "welcome":"مرحبا",
-    "welcomeMessage":"مرحبا بك في تطبيق الحزمة الأولية"
+    "welcomeMessage":"مرحبا بك في التطبيق",
+    "profile":"الملف الشخصي",
+    "settings":"الاعدادات"
 
 
 

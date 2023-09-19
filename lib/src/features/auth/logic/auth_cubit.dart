@@ -1,6 +1,7 @@
-import '/src/data/models/auth/auth.dart';
-import '/src/data/models/exceptions/restapi_exception.dart';
-import '/src/data/repositories/auth_repository.dart';
+import 'package:flutter_starter/src/utilities/exceptions/my_exception.dart';
+
+import '../data/auth_repository.dart';
+import '../models/auth.dart';
 import '/src/services/logger/logger.dart';
 import '/src/services/service_locator/locator.dart';
 import '/src/services/storage/storage_service.dart';
@@ -21,12 +22,12 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       final auth = await _authRepository.login(email, password);
       emit(AuthState.authenticated(auth));
-    } on RestApiException catch (e) {
+    } on MyException catch (e) {
       locator<Log>().error(e.toString());
       emit(AuthState.error(e));
     } catch (e) {
       locator<Log>().error(e.toString());
-      emit(const AuthState.error(RestApiException("Unknown error", "404")));
+      emit(const AuthState.error(MyException("Unknown error", "404")));
     }
   }
 
@@ -38,12 +39,12 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       final auth = await _authRepository.register(email, password);
       emit(AuthState.authenticated(auth));
-    } on RestApiException catch (e) {
+    } on MyException catch (e) {
       locator<Log>().error(e.toString());
       emit(AuthState.error(e));
     } catch (e) {
       locator<Log>().error(e.toString());
-      emit(const AuthState.error(RestApiException("Unknown error", "404")));
+      emit(const AuthState.error(MyException("Unknown error", "404")));
     }
   }
 
@@ -56,12 +57,12 @@ class AuthCubit extends Cubit<AuthState> {
       } else {
         emit(AuthState.authenticated(auth));
       }
-    } on RestApiException catch (e) {
+    } on MyException catch (e) {
       locator<Log>().error(e.toString());
       emit(AuthState.error(e));
     } catch (e) {
       locator<Log>().error(e.toString());
-      emit(const AuthState.error(RestApiException("Unknown error", "404")));
+      emit(const AuthState.error(MyException("Unknown error", "404")));
     }
   }
 
@@ -71,12 +72,12 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.logout();
       locator<StorageService>().clearAll();
       emit(const AuthState.unauthenticated());
-    } on RestApiException catch (e) {
+    } on MyException catch (e) {
       locator<Log>().error(e.toString());
       emit(AuthState.error(e));
     } catch (e) {
       locator<Log>().error(e.toString());
-      emit(const AuthState.error(RestApiException("Unknown error", "404")));
+      emit(const AuthState.error(MyException("Unknown error", "404")));
     }
   }
 
@@ -86,12 +87,12 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.deleteAccount();
       locator<StorageService>().clearAll();
       emit(const AuthState.unauthenticated());
-    } on RestApiException catch (e) {
+    } on MyException catch (e) {
       locator<Log>().error(e.toString());
       emit(AuthState.error(e));
     } catch (e) {
       locator<Log>().error(e.toString());
-      emit(const AuthState.error(RestApiException("Unknown error", "404")));
+      emit(const AuthState.error(MyException("Unknown error", "404")));
     }
   }
 }

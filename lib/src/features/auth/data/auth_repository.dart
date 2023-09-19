@@ -1,15 +1,14 @@
 import 'dart:convert';
 
-import '/src/data/models/auth/auth.dart';
-import '/src/data/models/auth/user.dart';
-import '/src/services/api/api_service.dart';
+import '../models/auth.dart';
+import '../models/user.dart';
 import '/src/services/firebase/firebase_sevice.dart';
 import '/src/services/logger/logger.dart';
 import '/src/services/service_locator/locator.dart';
 import '/src/services/storage/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../constants/storage_keys.dart';
+import '../../../constants/storage_keys.dart';
 
 class AuthRepository {
   final FirebaseService _firebaseService = locator<FirebaseService>();

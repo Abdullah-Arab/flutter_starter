@@ -22,7 +22,7 @@ mixin _$AuthState {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +31,7 @@ mixin _$AuthState {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$AuthState {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,7 +132,7 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) {
     return initial();
   }
@@ -144,7 +144,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) {
     return initial?.call();
   }
@@ -156,7 +156,7 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,7 +251,7 @@ class _$_Loading implements _Loading {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) {
     return loading();
   }
@@ -263,7 +263,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) {
     return loading?.call();
   }
@@ -275,7 +275,7 @@ class _$_Loading implements _Loading {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -407,7 +407,7 @@ class _$_authenticated implements _authenticated {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) {
     return authenticated(auth);
   }
@@ -419,7 +419,7 @@ class _$_authenticated implements _authenticated {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) {
     return authenticated?.call(auth);
   }
@@ -431,7 +431,7 @@ class _$_authenticated implements _authenticated {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -532,7 +532,7 @@ class _$_Unauthenticated implements _Unauthenticated {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) {
     return unauthenticated();
   }
@@ -544,7 +544,7 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) {
     return unauthenticated?.call();
   }
@@ -556,7 +556,7 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -615,9 +615,9 @@ abstract class _$$_ErrorCopyWith<$Res> {
   factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
       __$$_ErrorCopyWithImpl<$Res>;
   @useResult
-  $Res call({RestApiException message});
+  $Res call({MyException message});
 
-  $RestApiExceptionCopyWith<$Res> get message;
+  $MyExceptionCopyWith<$Res> get message;
 }
 
 /// @nodoc
@@ -636,14 +636,14 @@ class __$$_ErrorCopyWithImpl<$Res>
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as RestApiException,
+              as MyException,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RestApiExceptionCopyWith<$Res> get message {
-    return $RestApiExceptionCopyWith<$Res>(_value.message, (value) {
+  $MyExceptionCopyWith<$Res> get message {
+    return $MyExceptionCopyWith<$Res>(_value.message, (value) {
       return _then(_value.copyWith(message: value));
     });
   }
@@ -655,7 +655,7 @@ class _$_Error implements _Error {
   const _$_Error(this.message);
 
   @override
-  final RestApiException message;
+  final MyException message;
 
   @override
   String toString() {
@@ -686,7 +686,7 @@ class _$_Error implements _Error {
     required TResult Function() loading,
     required TResult Function(Auth auth) authenticated,
     required TResult Function() unauthenticated,
-    required TResult Function(RestApiException message) error,
+    required TResult Function(MyException message) error,
   }) {
     return error(message);
   }
@@ -698,7 +698,7 @@ class _$_Error implements _Error {
     TResult? Function()? loading,
     TResult? Function(Auth auth)? authenticated,
     TResult? Function()? unauthenticated,
-    TResult? Function(RestApiException message)? error,
+    TResult? Function(MyException message)? error,
   }) {
     return error?.call(message);
   }
@@ -710,7 +710,7 @@ class _$_Error implements _Error {
     TResult Function()? loading,
     TResult Function(Auth auth)? authenticated,
     TResult Function()? unauthenticated,
-    TResult Function(RestApiException message)? error,
+    TResult Function(MyException message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -761,9 +761,9 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements AuthState {
-  const factory _Error(final RestApiException message) = _$_Error;
+  const factory _Error(final MyException message) = _$_Error;
 
-  RestApiException get message;
+  MyException get message;
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;

@@ -1,13 +1,13 @@
-import '/src/blocs/auth/auth_cubit.dart';
-import '/src/constants/paddings.dart';
-import '/src/constants/themes.dart';
-import '/src/screens/auth/auth_screen.dart';
-import '/src/screens/components/error_widget.dart';
-import '/src/screens/components/loading_widget.dart';
+
+import '../../auth/logic/auth_cubit.dart';
+import '../../auth/ui/auth_screen.dart';
+import '../../../utilities/components/error_widget.dart';
+import '../../../utilities/components/loading_widget.dart';
 import '/src/services/service_locator/locator.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = const [
     Text('Home'),
     Text("Profile"),
+    Text("settings"),
   ];
   int _currentIndex = 0;
   void changeIndex(int index) {
@@ -41,19 +42,29 @@ class _HomeScreenState extends State<HomeScreen> {
         return state.maybeMap(
           authenticated: (state) {
             return Scaffold(
+              appBar: AppBar(
+                title: Text(
+                  AppLocalizations.of(context)!.appTitle,
+                ),
+                centerTitle: true,
+              ),
               key: _scaffoldKey,
               body: SafeArea(child: Center(child: _pages[_currentIndex])),
-              bottomNavigationBar: BottomNavigationBar(
-                currentIndex: _currentIndex,
-                onTap: changeIndex,
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Home',
+              bottomNavigationBar: NavigationBar(
+                selectedIndex: _currentIndex,
+                onDestinationSelected: changeIndex,
+                destinations: [
+                  NavigationDestination(
+                    icon: const Icon(Icons.home),
+                    label: AppLocalizations.of(context)!.home,
                   ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person),
-                    label: 'Profile',
+                  NavigationDestination(
+                    icon: const Icon(Icons.person),
+                    label: AppLocalizations.of(context)!.profile,
+                  ),
+                  NavigationDestination(
+                    icon: const Icon(Icons.settings),
+                    label: AppLocalizations.of(context)!.settings,
                   ),
                 ],
               ),

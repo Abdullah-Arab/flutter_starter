@@ -1,5 +1,5 @@
 import '/firebase_options.dart';
-import '/src/app.dart';
+import 'src/features/home/ui/app.dart';
 import '/src/constants/storage_keys.dart';
 import '/src/services/logger/logger.dart';
 import '/src/services/service_locator/locator.dart';

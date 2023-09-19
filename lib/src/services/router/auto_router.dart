@@ -1,5 +1,5 @@
-import '/src/screens/auth/auth_screen.dart';
-import '/src/screens/home/home_screen.dart';
+import '../../features/auth/ui/auth_screen.dart';
+import '../../features/home/ui/home_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 

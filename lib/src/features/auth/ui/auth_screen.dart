@@ -1,6 +1,5 @@
-import 'package:hive_flutter/hive_flutter.dart';
 
-import '/src/blocs/auth/auth_cubit.dart';
+import '../logic/auth_cubit.dart';
 import '/src/constants/gaps.dart';
 import '/src/constants/paddings.dart';
 import '/src/services/logger/logger.dart';
@@ -8,9 +7,8 @@ import '/src/services/service_locator/locator.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 
-import '../../constants/themes.dart';
+import '../../../constants/themes.dart';
 
 @RoutePage()
 class AuthScreen extends StatefulWidget {

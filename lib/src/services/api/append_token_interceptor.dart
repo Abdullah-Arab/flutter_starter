@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import '../../features/auth/models/auth.dart';
 import '/src/constants/storage_keys.dart';
-import '/src/data/models/auth/auth.dart';
 import '/src/services/logger/logger.dart';
 import '/src/services/service_locator/locator.dart';
 import '/src/services/storage/storage_service.dart';

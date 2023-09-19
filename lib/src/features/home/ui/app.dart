@@ -1,7 +1,7 @@
 import '/src/services/router/auto_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'constants/themes.dart';
+import '../../../constants/themes.dart';
 
 class App extends StatefulWidget {
   App({super.key});
